@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BERLIN ACADEMY – Deutsch Grammatik Quiz</title>
+<style>
+:root{--ink:#fff;--glass:rgba(255,255,255,.14);--glass2:rgba(255,255,255,.24);--edge:rgba(255,255,255,.42);--ok:#22e6a0;--no:#ff4d6d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0}
+body{font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#1b0f6e;min-height:100vh;overflow-x:hidden}
+.bg{position:fixed;inset:0;background:linear-gradient(160deg,#2b6bff 0%,#6a2cff 38%,#c02cff 72%,#ff3d9a 100%);z-index:0}
+.blob{position:fixed;border-radius:50%;filter:blur(46px);z-index:0;animation:fl 12s ease-in-out infinite}
+.b1{width:320px;height:320px;background:#00d8ff;top:-90px;left:-100px;opacity:.9}
+.b2{width:280px;height:280px;background:#ff5ec8;bottom:40px;right:-100px;animation-delay:-4s;opacity:.8}
+.b3{width:240px;height:240px;background:#3dffc4;bottom:-80px;left:5%;animation-delay:-8s;opacity:.55}
+@keyframes fl{50%{transform:translate(30px,-40px) scale(1.12)}}
+.wrap{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:16px 16px 28px;min-height:100vh;display:flex;flex-direction:column;gap:14px}
+.glass{background:var(--glass);border:1px solid var(--edge);border-radius:26px;-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);box-shadow:0 12px 40px rgba(20,0,90,.3),inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(255,255,255,.12)}
+.brand{display:flex;align-items:center;gap:12px;padding:12px 16px}
+.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#00e0ff,#8a5cff);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 16px rgba(0,0,0,.25)}
+.brand b{display:block;letter-spacing:.2em;font-size:16px;font-weight:900}.brand span{font-size:12px;opacity:.92}
+.hero{padding:28px 22px;text-align:center}
+.flag{display:flex;height:6px;width:70px;border-radius:6px;overflow:hidden;margin:0 auto 16px}.flag i{flex:1}
+.pill{display:inline-block;padding:6px 14px;border-radius:99px;background:var(--glass2);border:1px solid var(--edge);font-size:12px;font-weight:800;letter-spacing:.12em}
+h1{font-size:38px;line-height:1.04;margin:16px 0 6px;font-weight:900;text-shadow:0 4px 24px rgba(40,0,120,.4)}
+h1 em{font-style:normal;background:linear-gradient(90deg,#fff,#7df3ff 60%,#d6b8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:15px;margin:6px 0 0;opacity:.95}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.chip{padding:14px 6px;text-align:center;border-radius:20px}.chip strong{display:block;font-size:26px;font-weight:900}.chip small{font-size:11px;font-weight:700;letter-spacing:.06em}
+.pad{padding:16px}
+input{width:100%;padding:16px;border-radius:18px;border:1px solid var(--edge);background:rgba(255,255,255,.2);color:#fff;font-size:18px;font-weight:700;outline:0;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+input::placeholder{color:rgba(255,255,255,.75)}
+label{font-size:13px;font-weight:700;opacity:.95;display:block;margin-bottom:8px}
+.btn{border:1px solid rgba(255,255,255,.7);border-radius:22px;padding:18px;font-size:19px;font-weight:900;color:#1c0a6b;background:linear-gradient(120deg,#fff,#aef3ff 55%,#e0cdff);box-shadow:0 12px 30px rgba(10,0,80,.35),inset 0 1px 0 #fff;cursor:pointer;width:100%}
+.btn:active{transform:scale(.98)}.btn:disabled{opacity:.4}
+.tiers{padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.tier{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700}.tier small{display:block;font-weight:500;font-size:12px;opacity:.92}
+.dot{flex:0 0 38px;height:38px;border-radius:12px;background:var(--glass2);display:flex;align-items:center;justify-content:center;font-size:18px}
+.foot{text-align:center;font-size:13px;margin-top:auto;padding-top:4px}
+.hide{display:none!important}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:800;padding:12px 16px}
+.bar{height:9px;background:rgba(255,255,255,.22);border-radius:9px;overflow:hidden;margin-top:-4px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#00e0ff,#fff);border-radius:9px;transition:width .35s}
+.q{font-size:25px;font-weight:800;line-height:1.35;padding:24px 20px;text-shadow:0 2px 12px rgba(30,0,100,.3)}
+.blank{display:inline-block;min-width:56px;border-bottom:3px solid #fff;text-align:center;padding:0 4px}
+.blank.f{border-color:var(--ok);color:#b9ffe6}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;color:#fff;font-size:20px;font-weight:700;padding:16px;margin-top:11px;border-radius:22px;background:var(--glass);border:1px solid var(--edge);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),0 8px 24px rgba(20,0,90,.25);cursor:pointer;transition:transform .15s,background .25s}
+.opt b{flex:0 0 34px;height:34px;border-radius:50%;background:var(--glass2);display:flex;align-items:center;justify-content:center;font-size:15px}
+.opt:active{transform:scale(.98)}
+.opt.ok{background:rgba(34,230,160,.55);border-color:#b9ffe6;box-shadow:0 0 30px rgba(34,230,160,.7)}
+.opt.no{background:rgba(255,77,109,.6);border-color:#ffc2cd;box-shadow:0 0 30px rgba(255,77,109,.7);animation:sh .4s}
+@keyframes sh{20%{transform:translateX(-9px)}40%{transform:translateX(9px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+.ring{width:170px;height:170px;margin:6px auto;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;background:conic-gradient(#fff var(--p),rgba(255,255,255,.2) 0);position:relative}
+.ring:before{content:"";position:absolute;inset:12px;border-radius:50%;background:rgba(60,20,160,.75);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.ring *{position:relative}.ring strong{font-size:44px;font-weight:900}.ring small{font-weight:700}
+.msg{padding:18px;font-size:17px;line-height:1.5;font-weight:600}.msg h3{margin:0 0 8px;font-size:19px}.sig{margin-top:10px;font-weight:800;opacity:.95}
+.rev{border-top:1px solid var(--edge);padding:10px 0;font-size:15px}.rev s{color:#ffc2cd}.rev em{font-style:normal;font-weight:800;color:#b9ffe6}
+#cert{width:100%;border-radius:18px;display:block}
+#fx{position:fixed;inset:0;z-index:9;pointer-events:none}
+</style></head><body>
+<div class="bg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><canvas id="fx"></canvas>
+<div class="wrap">
+ <div class="glass brand"><div class="logo">B</div><div><b>BERLIN ACADEMY</b><span>Pardayev Samandar tomonidan tayyorlandi</span></div></div>
+
+ <div id="start" style="display:flex;flex-direction:column;gap:14px">
+  <div class="glass hero"><div class="flag"><i style="background:#111"></i><i style="background:#e0213a"></i><i style="background:#ff9f1c"></i></div>
+   <span class="pill">A1 – A2 · GRAMMATIK</span><h1>Deutsch<br><em>Grammatik Quiz</em></h1>
+   <p class="sub">Sein • Haben • Modalverben • Trennbare Verben • Satzbau</p></div>
+  <div class="chips"><div class="glass chip"><strong>60</strong><small>FRAGEN</small></div><div class="glass chip"><strong>3</strong><small>ANTWORTEN</small></div><div class="glass chip"><strong>70%</strong><small>ZERTIFIKAT</small></div></div>
+  <div class="glass tiers">
+   <div class="tier"><div class="dot">🏆</div><span>70% dan yuqori<small>Sertifikat olasiz</small></span></div>
+   <div class="tier"><div class="dot">🔥</div><span>50% – 70%<small>Sertifikatga juda yaqin</small></span></div>
+   <div class="tier"><div class="dot">💪</div><span>50% dan kam<small>Qayta urinib ko'ring</small></span></div></div>
+  <div class="glass pad"><label for="nm">Ism va familiyangiz (sertifikat uchun)</label><input id="nm" placeholder="Masalan: Ali Valiyev" autocomplete="name"></div>
+  <button class="btn" id="go" disabled>Testni boshlash →</button>
+  <div class="foot">Prepared by <b>Pardayev Samandar</b> · BERLIN ACADEMY</div>
+ </div>
+
+ <div id="quiz" class="hide" style="flex-direction:column;gap:14px">
+  <div class="glass top"><span id="no"></span><span id="sc"></span></div><div class="bar"><i id="pb"></i></div>
+  <div class="glass q" id="stem"></div><div id="opts"></div>
+  <button class="btn" id="next" disabled>Weiter →</button>
+ </div>
+
+ <div id="end" class="hide" style="flex-direction:column;gap:14px">
+  <div class="glass hero" style="padding:22px"><span class="pill">ERGEBNIS</span>
+   <div class="ring" id="ring"><strong id="pc"></strong><small id="fs"></small></div><div style="font-size:22px;font-weight:900" id="gr"></div></div>
+  <div class="glass msg" id="msg"></div>
+  <div class="glass pad hide" id="certbox"><b>🏆 Sizning sertifikatingiz</b><div style="font-size:12px;margin:4px 0 10px;opacity:.9">Rasmni bosib turing va «Saqlash» ni tanlang (yoki skrinshot oling).</div><img id="cert" alt="Zertifikat"></div>
+  <div class="glass pad"><b>Xatolar / Fehler</b><div id="rev"></div></div>
+  <button class="btn" id="again">Nochmal versuchen · Qayta boshlash</button>
+ </div>
+</div>
+<script>
+const D=[["Ich ___ 18 Jahre alt.", ["bist", "sind", "bin"], 2], ["Du ___ ein Auto.", ["hast", "habe", "hat"], 0], ["Wir ___ heute zu Hause.", ["ist", "seid", "sind"], 2], ["Ich ___ einen Kaffee.", ["möchtest", "möchte", "möchten"], 1], ["Ich ___ Fußball.", ["mag", "magst", "mögen"], 0], ["Meine Eltern ___ ein Haus.", ["hat", "habt", "haben"], 2], ["Ich ___ die Antwort.", ["weißt", "weiß", "wissen"], 1], ["Was ___ du heute?", ["tust", "tue", "tut"], 0], ["Er ___ Lehrer.", ["bin", "bist", "ist"], 2], ["Ihr ___ Musik.", ["mögt", "mag", "mögen"], 0], ["Ich ___ morgen früh aufstehen.", ["musst", "müssen", "muss"], 2], ["Anna ___ eine Schwester.", ["haben", "hat", "habt"], 1], ["Ihr ___ heute Pizza essen.", ["möchtet", "möchten", "möchte"], 0], ["Du ___ sehr gut Deutsch sprechen.", ["kann", "kannst", "können"], 1], ["Ich ___ heute im Supermarkt ___.", ["einkaufe", "ein / kaufe", "kaufe / ein"], 2], ["Ihr ___ heute zu Hause.", ["sind", "seid", "ist"], 1], ["Wir ___ heute zu Hause bleiben.", ["müssen", "muss", "müsst"], 0], ["Er ___ Arzt werden.", ["will", "wollen", "willst"], 0], ["Ich ___ morgen um 6 Uhr ___.", ["aufstehe", "stehe / auf", "auf / stehe"], 1], ["Du ___ das nicht.", ["weißt", "weiß", "wisst"], 0], ["Ihr ___ eure Hausaufgaben machen.", ["soll", "sollt", "sollen"], 1], ["Was ___ ihr am Wochenende?", ["tun", "tut", "tust"], 1], ["Ich ___ meine Mutter heute Abend ___.", ["anrufe", "an / rufe", "rufe / an"], 2], ["Wir können heute Abend ___.", ["fernsehen", "sehen fern", "fernseht"], 0], ["Du ___ hier nicht rauchen.", ["darfst", "darf", "dürfen"], 0], ["Ihr ___ viel Zeit.", ["haben", "habt", "hat"], 1], ["Wir ___ gern Pizza.", ["mag", "mögen", "mögt"], 1], ["Du musst um 7 Uhr ___.", ["aufstehen", "stehst auf", "auf stehst"], 0], ["Ich gehe jetzt ins Bett, weil ich morgen früh ___.", ["stehe auf", "auf stehen", "aufstehe"], 2], ["Kannst du morgen ___?", ["mitkommen", "kommst mit", "mit kommen"], 0], ["Ihr wollt am Samstag ___.", ["geht aus", "aus geht", "ausgehen"], 2], ["Ich bleibe zu Hause, weil ich heute ___.", ["arbeite ich", "arbeite", "ich arbeite"], 1], ["Der Supermarkt ___ um 8 Uhr ___.", ["aufmacht", "auf / macht", "macht / auf"], 2], ["Mein Bruder ___ gern Eis.", ["mögen", "magst", "mag"], 2], ["Wir ___ die Antwort nicht.", ["weiß", "wissen", "wisst"], 1], ["Er ___ heute Abend ___.", ["fernsieht", "sieht / fern", "fern / sieht"], 1], ["Peter und Anna ___ Freunde.", ["sind", "ist", "seid"], 0], ["Heute ___ ich nicht arbeiten.", ["musst", "muss", "müssen"], 1], ["Du ___ mir bitte helfen.", ["kannst", "kann", "können"], 0], ["Wir ___ am Sonntag ___.", ["zurückkommen", "kommen / zurück", "zurück / kommen"], 1], ["Ich muss morgen früh ___.", ["einkaufen", "kaufe ein", "ein kaufe"], 0], ["Wir gehen ins Kino, weil wir morgen frei ___.", ["haben wir", "wir haben", "haben"], 2], ["Du ___ deine Tante heute ___.", ["rufst / an", "anrufst", "an / rufst"], 0], ["Ihr müsst die Tür ___.", ["zumachen", "macht zu", "zu macht"], 0], ["Ich lerne Deutsch, weil ich in Deutschland ___.", ["möchte arbeiten", "arbeiten möchten", "arbeiten möchte"], 2], ["Ich bleibe zu Hause, weil ich krank ___.", ["bin", "bin ich", "ich bin"], 0], ["Er ___ heute früh ___.", ["weggeht", "geht / weg", "weg / geht"], 1], ["Wir wollen heute Abend ___.", ["gehen aus", "ausgeht", "ausgehen"], 2], ["Ich ___ den Test morgen ___.", ["bereite / vor", "vorbereite", "vor / bereite"], 0], ["Wir ___ im Projekt ___.", ["zusammenarbeiten", "arbeiten / zusammen", "zusammen / arbeiten"], 1], ["Er ___ jeden Tag in den Bus ___.", ["steigt / ein", "einsteigt", "ein / steigt"], 0], ["Du ___ heute Abend nicht lange fernsehen.", ["darf", "dürfen", "darfst"], 2], ["Ich gehe heute nicht aus, weil ich morgen früh ___.", ["muss aufstehen", "aufstehen muss", "aufstehe muss"], 1], ["Er kann heute nicht ___.", ["kommt mit", "mit kommt", "mitkommen"], 2], ["Du ___ einen Tee?", ["möchte", "möchten", "möchtest"], 2], ["Ihr ___ das nicht.", ["wissen", "wisst", "weißt"], 1], ["Heute ___ ich nichts.", ["tust", "tut", "tue"], 2], ["Maria kauft Brot, weil sie heute Gäste ___.", ["hat sie", "hat", "sie hat"], 1], ["Wir möchten morgen früh ___.", ["kommen zurück", "zurück kommen", "zurückkommen"], 2], ["Er ist nicht hier, weil er im Supermarkt ___.", ["kauft ein", "einkaufen", "einkauft"], 2]];
+let i=0,s=0,done=false,wrong=[],name="";
+const $=id=>document.getElementById(id);
+function show(id){["start","quiz","end"].forEach(x=>{$(x).classList.toggle("hide",x!==id);if(x===id)$(x).style.display="flex"});window.scrollTo(0,0)}
+function fill(st,t){const p=t.split(" / ");let k=0;return st.replace(/___/g,()=>'<span class="blank f">'+(p[k++]||"")+'</span>')}
+function blanks(st){return st.replace(/___/g,'<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;</span>')}
+/* sound */
+let AC;function ac(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume()}catch(e){}return AC}
+function tone(f,t,d,type,v){const a=ac();if(!a)return;const o=a.createOscillator(),g=a.createGain();o.type=type||"sine";o.frequency.value=f;o.connect(g);g.connect(a.destination);const n=a.currentTime+t;g.gain.setValueAtTime(0,n);g.gain.linearRampToValueAtTime(v||.25,n+.02);g.gain.exponentialRampToValueAtTime(.001,n+d);o.start(n);o.stop(n+d+.05)}
+const sndOk=()=>{tone(659,0,.15);tone(880,.1,.15);tone(1319,.2,.3)};
+const sndNo=()=>{tone(220,0,.25,"sawtooth",.22);tone(147,.15,.35,"sawtooth",.22)};
+const sndWin=()=>[523,659,784,1047,1319].forEach((f,k)=>tone(f,k*.13,.4,"triangle",.28));
+const sndSad=()=>[392,349,311,262].forEach((f,k)=>tone(f,k*.22,.45,"sine",.25));
+/* confetti */
+const cv=$("fx"),cx=cv.getContext("2d");let P=[],run=false;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener("resize",size);
+const COL=["#00e0ff","#ffffff","#22e6a0","#ff5ec8","#a78bff","#4d8dff"];
+function boom(n,x,y){for(let k=0;k<n;k++){const a=Math.random()*Math.PI*2,v=4+Math.random()*9;P.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-6,r:4+Math.random()*5,c:COL[k%COL.length],rot:Math.random()*6,vr:(Math.random()-.5)*.4,l:90+Math.random()*40})}if(!run){run=true;tick()}}
+function tick(){cx.clearRect(0,0,cv.width,cv.height);P=P.filter(p=>p.l>0);P.forEach(p=>{p.vy+=.28;p.x+=p.vx;p.y+=p.vy;p.vx*=.99;p.rot+=p.vr;p.l--;cx.save();cx.globalAlpha=Math.min(1,p.l/30);cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle=p.c;cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()});if(P.length)requestAnimationFrame(tick);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}}
+/* quiz */
+function render(){done=false;const [st,o]=D[i];$("no").textContent="Frage "+(i+1)+" / 60";$("sc").textContent="✓ "+s;$("pb").style.width=(i/60*100)+"%";
+ $("stem").innerHTML=blanks(st);$("next").disabled=true;$("next").textContent=i==59?"Ergebnis ansehen →":"Weiter →";$("opts").innerHTML="";
+ o.forEach((t,k)=>{const b=document.createElement("button");b.className="opt";b.innerHTML="<b>"+"ABC"[k]+"</b><span>"+t+"</span>";b.onclick=e=>pick(k,e);$("opts").appendChild(b)})}
+function pick(k,e){if(done)return;done=true;const [st,o,c]=D[i],bs=$("opts").children;bs[c].classList.add("ok");$("stem").innerHTML=fill(st,o[c]);
+ if(k===c){s++;sndOk();const r=bs[k].getBoundingClientRect();boom(70,r.left+r.width/2,r.top+r.height/2)}else{bs[k].classList.add("no");wrong.push([i,k]);sndNo();if(navigator.vibrate)navigator.vibrate(200)}
+ $("sc").textContent="✓ "+s;$("next").disabled=false;$("next").scrollIntoView({behavior:"smooth",block:"nearest"})}
+function cert(pct){const W=1400,H=990,c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");
+ let gr=g.createLinearGradient(0,0,W,H);gr.addColorStop(0,"#2b6bff");gr.addColorStop(.5,"#6a2cff");gr.addColorStop(1,"#ff3d9a");g.fillStyle=gr;g.fillRect(0,0,W,H);
+ g.fillStyle="rgba(0,224,255,.45)";g.beginPath();g.arc(120,100,260,0,7);g.fill();g.fillStyle="rgba(61,255,196,.3)";g.beginPath();g.arc(W-80,H-60,300,0,7);g.fill();
+ g.fillStyle="rgba(255,255,255,.2)";g.strokeStyle="rgba(255,255,255,.8)";g.lineWidth=3;g.beginPath();g.roundRect(60,60,W-120,H-120,50);g.fill();g.stroke();
+ g.textAlign="center";g.fillStyle="#fff";g.font="900 38px Arial";g.fillText("B E R L I N   A C A D E M Y",W/2,160);
+ g.font="900 100px Arial";g.fillText("ZERTIFIKAT",W/2,300);g.font="26px Arial";g.fillText("Dieses Zertifikat wird verliehen an",W/2,375);
+ g.font="900 76px Arial";g.fillStyle="#d9fbff";g.fillText(name,W/2,480);g.fillStyle="rgba(255,255,255,.8)";g.fillRect(W/2-330,505,660,3);
+ g.fillStyle="#fff";g.font="28px Arial";g.fillText("für das erfolgreiche Bestehen des Tests",W/2,575);
+ g.font="900 46px Arial";g.fillText("DEUTSCH GRAMMATIK  ·  A1–A2",W/2,640);
+ g.font="700 36px Arial";g.fillStyle="#b9ffe6";g.fillText("Ergebnis: "+s+" / 60  ("+pct+"%)",W/2,705);
+ g.fillStyle="#fff";g.font="24px Arial";g.textAlign="left";g.fillText("Datum: "+new Date().toLocaleDateString("de-DE"),130,860);
+ g.textAlign="right";g.font="italic 900 44px Georgia";g.fillText("Pardayev Samandar",W-130,850);g.font="22px Arial";g.fillText("Teacher Pardayev · BERLIN ACADEMY",W-130,885);
+ $("cert").src=c.toDataURL("image/png")}
+function finish(){const pct=Math.round(s/60*100);$("pb").style.width="100%";$("pc").textContent=pct+"%";$("fs").textContent=s+" / 60";$("ring").style.setProperty("--p",pct+"%");
+ $("gr").textContent=s>=55?"Sehr gut":s>=49?"Gut":s>=42?"Befriedigend":s>=36?"Ausreichend":"Mehr üben";
+ const m=$("msg"),cb=$("certbox");cb.classList.add("hide");
+ if(pct>70){m.innerHTML="<h3>🏆 Tabriklaymiz, "+name+"!</h3>Siz testdan a'lo natija bilan o'tdingiz va BERLIN ACADEMY sertifikatini qo'lga kiritdingiz!<div class='sig'>— Teacher Pardayev</div>";cert(pct);cb.classList.remove("hide");sndWin();boom(160,innerWidth/2,innerHeight/3);setTimeout(()=>boom(120,innerWidth*.2,innerHeight/2),500);setTimeout(()=>boom(120,innerWidth*.8,innerHeight/2),900)}
+ else if(pct>=50){m.innerHTML="<h3>🔥 Juda yaqin, "+name+"!</h3>Sen Sertifikatni olishga juda yaqin kelgan eding! Yana bir bor urinib ko'r, o'z natijangni yaxshila va sertifikatni qo'lga kirit, olg'a atlet!<div class='sig'>— Teacher Pardayev</div>";sndOk()}
+ else{m.innerHTML="<h3>💪 Ruhingni tushirma, "+name+"!</h3>Bu hali boshlanishi, men senga ishonaman! Qayta urinib ko'r!<div class='sig'>— Teacher Pardayev</div>";sndSad()}
+ $("rev").innerHTML=wrong.length?wrong.map(([q,k])=>{const [st,o,c]=D[q];return '<div class="rev"><b>'+(q+1)+'.</b> '+fill(st,o[c])+'<br><s>'+o[k]+'</s> → <em>'+o[c]+'</em></div>'}).join(""):"Xato yo'q! 🎉";
+ show("end")}
+$("nm").oninput=e=>{$("go").disabled=e.target.value.trim().length<2};
+function begin(){name=$("nm").value.trim();i=0;s=0;wrong=[];ac();show("quiz");render()}
+$("go").onclick=begin;$("again").onclick=()=>{show("start")};
+$("next").onclick=()=>{ac();if(i==59)finish();else{i++;render();window.scrollTo({top:0,behavior:"smooth"})}};
+</script></body></html>
